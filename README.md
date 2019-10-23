@@ -11,6 +11,11 @@ The script works great for my use case, but I wanted to make it more accessible 
 
 Since this is a rather simple web app that [mostly utilizies the HTML5 canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas), I decided to write it using vanilla JS and CSS.
 
+## Built With
+
+* [Modak Google Font](https://fonts.google.com/specimen/Modak)
+* [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P)
+
 ## Maintainers
 
 * [Ashley Grenon - @townsean](https://github.com/townsean)
