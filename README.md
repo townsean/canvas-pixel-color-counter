@@ -16,6 +16,11 @@ Since this is a rather simple web app that [mostly utilizies the HTML5 canvas](h
 * [Modak Google Font](https://fonts.google.com/specimen/Modak)
 * [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P)
 
+## Useful Resources
+* [Using files from web applications](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)
+* [Pixel manipulation with canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas)
+* [Drawing images onto canvas](https://webplatform.github.io/docs/concepts/programming/drawing_images_onto_canvas/)
+
 ## Maintainers
 
 * [Ashley Grenon - @townsean](https://github.com/townsean)
