@@ -13,7 +13,10 @@ loadImage = (file) => {
     const img = new Image();
     img.src = url;    
     img.onload = () => {
-        const context = document.getElementById('canvas').getContext('2d');  
+        this.reset();
+
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');  
         context.drawImage(img, 0, 0);        
         
         img.style.display = 'none';
@@ -21,13 +24,15 @@ loadImage = (file) => {
 
         // count pixels per unique color
         const color_count = this.countPixels(img, context);
-        
-        console.log(color_count);
+
+        // draw color swatches
+        this.drawColorSwatch(color_count);
     }  
 };
 
 /**
  * Counts the number of pixels per a unique color
+ * TODO: Return a promise instead
  */
 countPixels = (image, context) => {
     const color_count = {};
@@ -46,4 +51,44 @@ countPixels = (image, context) => {
     }
 
     return color_count;
+};
+
+/**
+ * 
+ */
+drawColorSwatch = (color_count) => {
+    let colorSwatches = document.getElementById('color-swatches');
+
+    for(const color in color_count) {
+        const container = document.createElement("section");
+        const swatch = document.createElement("div");
+        const colorCountLabel = document.createElement("span");
+
+        container.classList.add("color-swatch-container");
+
+        swatch.classList.add("color-swatch");
+        swatch.style.background = color;
+        swatch.title = color;
+
+        colorCountLabel.classList.add("color-swatch-label");
+        colorCountLabel.innerHTML = `: ${color_count[color]}`;
+
+        container.appendChild(swatch);
+        container.appendChild(colorCountLabel);
+        colorSwatches.appendChild(container);
+    }
+};
+
+/**
+ * Clear DOM of past color counting
+ */
+reset = () => {
+    let colorSwatches = document.getElementById('color-swatches');
+    while(colorSwatches.firstChild) {
+        colorSwatches.removeChild(colorSwatches.firstChild);
+    }
+
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');  
+    context.clearRect(0, 0, canvas.width, canvas.height);
 }

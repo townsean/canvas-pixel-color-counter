@@ -1,0 +1,15 @@
+.color-swatch-container {
+    display: flex;
+    align-items: center;
+}
+
+.color-swatch {
+    display: inline-block;
+    border: solid;
+    margin: 0.5rem 0.25rem 0.5rem 1rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.color-swatch-label {
+}
