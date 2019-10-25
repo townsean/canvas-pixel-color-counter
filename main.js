@@ -56,10 +56,10 @@ countPixels = (image, context) => {
 /**
  * 
  */
-drawColorSwatch = (color_count) => {
+drawColorSwatch = (colorCount) => {
     let colorSwatches = document.getElementById('color-swatches');
 
-    for(const color in color_count) {
+    for(const color in colorCount) {
         const container = document.createElement("section");
         const swatch = document.createElement("div");
         const colorCountLabel = document.createElement("span");
@@ -71,12 +71,15 @@ drawColorSwatch = (color_count) => {
         swatch.title = color;
 
         colorCountLabel.classList.add("color-swatch-label");
-        colorCountLabel.innerHTML = `: ${color_count[color]}`;
+        colorCountLabel.innerHTML = `: ${colorCount[color]}`;
 
         container.appendChild(swatch);
         container.appendChild(colorCountLabel);
         colorSwatches.appendChild(container);
     }
+    
+    let pixelCountContainer = document.getElementById('pixel-count-container');
+    pixelCountContainer.classList.remove('invisible');
 };
 
 /**

@@ -6,6 +6,7 @@
         <meta name="description" content="A web app that counts the number of pixels in an image per a unique color.">
         <title>Pixel Color Counter</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
@@ -19,13 +20,13 @@
                 <input type="file" id="image" name="image" accept="image/png, image/jpeg">
                 <canvas id="canvas"></canvas> 
             </section>
-            <section>
+            <section id="pixel-count-container" class="pixel-count-container invisible">
                 <h2>Pixel Counts</h2>
                 <div id="color-swatches" class="color-swatches"></div>
             </section>  
         </main>
         <footer>
-            Copyright &copy; Ashley Grenon
+            <a href="https://github.com/townsean/canvas-pixel-color-counter">Copyright &copy; Ashley Grenon</a>
         </footer>
         <script src="main.js"></script>
     </body>

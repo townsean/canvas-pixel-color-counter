@@ -1,10 +1,46 @@
 h1, h2 {
     font-family: 'Press Start 2P';
+    text-align: center;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.pixel-count-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .color-swatches {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 5vw;
 }
 
 .color-swatch-container {
@@ -24,8 +60,12 @@ h1, h2 {
 .color-swatch-label {
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
     .color-swatch-container {
-        width: 25wv;
+        width: 30vw;
+    }
+
+    .color-swatches {
+        margin-left: 0;
     }
 }
