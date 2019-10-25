@@ -1,6 +1,16 @@
+h1, h2 {
+    font-family: 'Press Start 2P';
+}
+
+.color-swatches {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .color-swatch-container {
     display: flex;
     align-items: center;
+    width: 10vw;
 }
 
 .color-swatch {
@@ -12,4 +22,10 @@
 }
 
 .color-swatch-label {
+}
+
+@media screen and (max-width:600px) {
+    .color-swatch-container {
+        width: 25wv;
+    }
 }
