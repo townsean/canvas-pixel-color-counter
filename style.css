@@ -45,6 +45,7 @@ canvas {
     visibility: hidden;
 }
 
+#upload-container,
 .pixel-count-container {
     display: flex;
     flex-direction: column;
@@ -80,6 +81,7 @@ canvas {
     max-width: 75vh;
     max-height: 45vh;
     background-size: contain;
+    margin: 1rem;
 }
 
 @media screen and (max-width: 600px) {
