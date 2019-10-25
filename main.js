@@ -16,6 +16,9 @@ loadImage = (file) => {
         this.reset();
 
         const canvas = document.getElementById('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+
         const context = canvas.getContext('2d');  
         context.drawImage(img, 0, 0);        
         
