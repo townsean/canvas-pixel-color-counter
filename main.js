@@ -22,7 +22,6 @@ loadImage = (file) => {
         const context = canvas.getContext('2d');  
         context.drawImage(img, 0, 0);        
         
-        img.style.display = 'none';
         window.URL.revokeObjectURL(this.src);
 
         // count pixels per unique color
@@ -30,6 +29,9 @@ loadImage = (file) => {
 
         // draw color swatches
         this.drawColorSwatch(color_count);
+
+        let uploadContainer = document.getElementById('upload-container');        
+        uploadContainer.appendChild(img);
     }  
 };
 
@@ -90,8 +92,15 @@ drawColorSwatch = (colorCount) => {
  */
 reset = () => {
     let colorSwatches = document.getElementById('color-swatches');
-    while(colorSwatches.firstChild) {
+    while (colorSwatches.firstChild) {
         colorSwatches.removeChild(colorSwatches.firstChild);
+    }
+    
+    let uploadContainer = document.getElementById('upload-container');
+    let image = uploadContainer.getElementsByTagName('img')[0];  
+
+    if (image) {
+        uploadContainer.removeChild(image);
     }
 
     const canvas = document.getElementById('canvas');

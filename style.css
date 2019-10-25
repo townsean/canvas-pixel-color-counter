@@ -37,6 +37,10 @@ a {
     text-decoration: none;
 }
 
+canvas {
+    display: none;
+}
+
 .invisible {
     visibility: hidden;
 }
@@ -68,6 +72,14 @@ a {
 }
 
 .color-swatch-label {
+}
+
+#upload-container img {    
+    width: auto;
+    height: auto;
+    max-width: 75vh;
+    max-height: 45vh;
+    background-size: contain;
 }
 
 @media screen and (max-width: 600px) {
