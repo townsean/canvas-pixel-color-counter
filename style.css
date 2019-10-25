@@ -1,10 +1,7 @@
-h1, h2 {
-    font-family: 'Press Start 2P';
-    text-align: center;
-}
-
 html, body {
     height: 100%;
+    margin: 0;    
+    font-family: 'Open Sans';
 }
 
 body {
@@ -12,7 +9,18 @@ body {
     flex-direction: column;
 }
 
-header {
+h1, h2 {
+    font-family: 'Press Start 2P';
+    text-align: center;
+}
+
+header, footer {
+    background: black;    
+}
+
+footer a,
+header h1 {
+    color: white;
 }
 
 main {
@@ -21,6 +29,8 @@ main {
 
 footer {
     flex-shrink: 0;
+    text-align: center;
+    height: 5vh;
 }
 
 a {
