@@ -1,3 +1,16 @@
+// To avoid Uncaught DOMException while using Web Workers
+// Run python -m http.server 8000
+// https://stackoverflow.com/questions/8170431/using-web-workers-for-drawing-using-native-canvas-functions
+const worker = new Worker('./counter.js');
+
+handleWorkerCompletion = (message) => {
+    if(message.data.command == "done") {   
+        // draw color swatches
+        this.drawColorSwatch(message.data.colorCounts);
+        worker.removeEventListener("message", handleWorkerCompletion);
+    }
+};
+
 /**
  * Event listener for when the file upload has been updated
  */
@@ -7,6 +20,7 @@ document.getElementById("image").addEventListener('change', (e) => {
 
 /**
  * Given a valid image file, load the image into the canvas
+ * Good explantation the the image data: https://css-tricks.com/manipulating-pixels-using-canvas/#article-header-id-1
  */
 loadImage = (file) => {
     const url = window.URL.createObjectURL(file);
@@ -20,42 +34,21 @@ loadImage = (file) => {
         canvas.height = img.height;
 
         const context = canvas.getContext('2d');  
-        context.drawImage(img, 0, 0);        
-        
-        window.URL.revokeObjectURL(this.src);
-
-        // count pixels per unique color
-        const color_count = this.countPixels(img, context);
-
-        // draw color swatches
-        this.drawColorSwatch(color_count);
-
-        let uploadContainer = document.getElementById('upload-container');        
+        context.drawImage(img, 0, 0);   
+                
+        const uploadContainer = document.getElementById('upload-container');        
         uploadContainer.appendChild(img);
+
+        const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+
+        window.URL.revokeObjectURL(this.src);
+        worker.addEventListener("message", handleWorkerCompletion, false);
+        worker.postMessage({
+            "width": img.width,
+            "height": img.height,
+            "imageData": imageData.data
+        });
     }  
-};
-
-/**
- * Counts the number of pixels per a unique color
- * TODO: Return a promise instead
- */
-countPixels = (image, context) => {
-    const color_count = {};
-    for(let x = 0; x < image.width; x++) {
-        for(let y = 0; y < image.height; y++) {
-            const pixel = context.getImageData(x, y, 1, 1);
-            const data = pixel.data;
-            const rgba = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${(data[3] / 255)})`;
-
-            if (rgba in color_count) {
-                color_count[rgba] += 1;
-            } else {
-                color_count[rgba] = 1;
-            }
-        }
-    }
-
-    return color_count;
 };
 
 /**
