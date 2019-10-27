@@ -11,6 +11,9 @@ handleWorkerCompletion = (message) => {
         
         const waitIndicator = document.getElementById("wait-indicator");
         waitIndicator.classList.add("invisible");
+
+        const uploadContainer = document.getElementById('pixel-count-container'); 
+        uploadContainer.scrollIntoView({ behavior: 'smooth'});
     }
 };
 
