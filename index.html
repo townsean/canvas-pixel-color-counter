@@ -5,7 +5,7 @@
         <meta name="author" content="Ashley G">
         <meta name="description" content="A web app that counts the number of pixels in an image per a unique color.">
         <title>Pixel Color Counter</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -16,21 +16,30 @@
             <h1>Pixel Color Counter</h1>
         </header>
         <main>
+            <!-- About Section -->
+            <section id="about">
+                <h2>Count Pixels by Color</h2>
+                <p>Pixel Color Counter is vanilla JS web application that accepts an image file (uploaded by the user) and displays the total number of pixels per a unique color. </p>
+            </section> 
+            <!-- Upload Image Section -->
             <section id="upload-container">
+                <h2>Upload an Image</h2>
                 <div>
                     <label for="image">Choose an image:</label>
                     <input type="file" id="image" name="image" accept="image/png, image/jpeg">
                 </div>
                 <canvas id="canvas"></canvas> 
             </section>
+            <!-- Pixel Color Swatches and Count -->
             <section id="pixel-count-container" class="pixel-count-container invisible">
-                <h2>Pixel Counts</h2>
+                <h2>Pixel Counts by Color</h2>
                 <div id="color-swatches" class="color-swatches"></div>
-            </section>  
-        </main>
+            </section> 
+        </main>        
+        <div id="wait-indicator" class="invisible"></div> 
         <footer>
             <a href="https://github.com/townsean/canvas-pixel-color-counter">Copyright &copy; Ashley Grenon</a>
-        </footer>        
+        </footer>    
         <script src="counter.js"></script>
         <script src="main.js"></script>
     </body>

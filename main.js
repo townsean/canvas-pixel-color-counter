@@ -8,6 +8,9 @@ handleWorkerCompletion = (message) => {
         // draw color swatches
         this.drawColorSwatch(message.data.colorCounts);
         worker.removeEventListener("message", handleWorkerCompletion);
+        
+        const waitIndicator = document.getElementById("wait-indicator");
+        waitIndicator.classList.add("invisible");
     }
 };
 
@@ -48,6 +51,9 @@ loadImage = (file) => {
             "height": img.height,
             "imageData": imageData.data
         });
+
+        const waitIndicator = document.getElementById("wait-indicator");
+        waitIndicator.classList.remove("invisible");
     }  
 };
 
@@ -68,7 +74,6 @@ drawColorSwatch = (colorCount) => {
         swatch.style.background = color;
         swatch.title = color;
 
-        colorCountLabel.classList.add("color-swatch-label");
         colorCountLabel.innerHTML = `: ${colorCount[color]}`;
 
         container.appendChild(swatch);
@@ -84,6 +89,9 @@ drawColorSwatch = (colorCount) => {
  * Clear DOM of past color counting
  */
 reset = () => {
+    let pixelCountContainer = document.getElementById('pixel-count-container');
+    pixelCountContainer.classList.add('invisible');
+
     let colorSwatches = document.getElementById('color-swatches');
     while (colorSwatches.firstChild) {
         colorSwatches.removeChild(colorSwatches.firstChild);
