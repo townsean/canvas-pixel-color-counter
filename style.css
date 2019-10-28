@@ -9,7 +9,9 @@ body {
     flex-direction: column;
 }
 
-h1, h2 {
+h1, 
+h2, 
+#wait-indicator p {
     font-family: 'Press Start 2P';
     text-align: center;
 }
@@ -98,13 +100,11 @@ canvas {
 
 /* Wait Indicator */
 #wait-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: rgba(0, 0, 0, 0.5);
-    background-image: 
-        url("assets/ashley_sprite.gif"), 
-        url("assets/please_wait.png");
-    background-repeat: no-repeat;
-    background-size: 25%;
-    background-position: 50% 50%, 50% 85%;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -114,7 +114,12 @@ canvas {
 }
 
 #wait-indicator img {
-    margin: 0 auto;
+    opacity: 100%;
+}
+
+#wait-indicator p {
+    color: white;
+    font-size: 2.5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -126,8 +131,12 @@ canvas {
         margin-left: 0;
     }
 
-    #wait-indicator {        
-        background-size: 50%;
-        background-position: 50% 50%, 50% 67.5%;
+    #wait-indicator img {        
+        width: 50%;
+    }
+
+    #wait-indicator p {
+        color: white;
+        font-size: 1.5rem;
     }
 }
