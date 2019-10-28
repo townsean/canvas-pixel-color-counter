@@ -98,6 +98,16 @@ canvas {
     margin: 1rem;
 }
 
+.color-swatches,
+#upload-container div,
+#about p {
+    margin: 25px;
+}
+
+#about p {
+    text-align: center;
+}
+
 /* Wait Indicator */
 #wait-indicator {
     display: flex;
