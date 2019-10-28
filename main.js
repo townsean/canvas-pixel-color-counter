@@ -9,9 +9,11 @@ handleWorkerCompletion = (message) => {
         this.drawColorSwatch(message.data.colorCounts);
         worker.removeEventListener("message", handleWorkerCompletion);
         
+        // hide wait indicator
         const waitIndicator = document.getElementById("wait-indicator");
         waitIndicator.classList.add("invisible");
 
+        // scroll to color swatch section
         const pixelCountContainer = document.getElementById('pixel-count-container'); 
         pixelCountContainer.scrollIntoView({ behavior: 'smooth'});
     }
@@ -50,8 +52,6 @@ loadImage = (file) => {
         window.URL.revokeObjectURL(this.src);
         worker.addEventListener("message", handleWorkerCompletion, false);
         worker.postMessage({
-            "width": img.width,
-            "height": img.height,
             "imageData": imageData.data
         });
 

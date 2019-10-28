@@ -98,14 +98,23 @@ canvas {
 
 /* Wait Indicator */
 #wait-indicator {
-    background: black;
-    opacity: 45%;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: 
+        url("assets/ashley_sprite.gif"), 
+        url("assets/please_wait.png");
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: 50% 50%, 50% 85%;
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 10;
+}
+
+#wait-indicator img {
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 600px) {
@@ -115,5 +124,10 @@ canvas {
 
     .color-swatches {
         margin-left: 0;
+    }
+
+    #wait-indicator {        
+        background-size: 50%;
+        background-position: 50% 50%, 50% 67.5%;
     }
 }
