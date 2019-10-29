@@ -1,0 +1,18 @@
+<!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Patterns -->
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="Pattern" x="0" y="0" width=".5" height=".25">
+      <rect x="0" y="0" width="25" height="25" fill="#402037"/>
+      <rect x="25" y="0" width="25" height="25" fill="#FF80DB"/> 
+      <rect x="50" y="0" width="25" height="25" fill="#638052"/>   
+      <rect x="75" y="0" width="25" height="25" fill="#BF60A4"/>       
+      <rect x="0" y="25" width="25" height="25" fill="#E672C6"/>
+      <rect x="25" y="25" width="25" height="25" fill="#C6FFA3"/> 
+      <rect x="50" y="25" width="25" height="25" fill="#80406D"/>   
+      <rect x="75" y="25" width="25" height="25" fill="#B3E693"/> 
+    </pattern>
+  </defs>
+
+  <rect fill="url(#Pattern)" stroke="black" width="200" height="200"/>
+</svg>

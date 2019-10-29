@@ -4,11 +4,11 @@
 const worker = new Worker('./counter.js');
 
 handleWorkerCompletion = (message) => {
-    if(message.data.command == "done") {   
+    if(message.data.command == "done") {
         // draw color swatches
         this.drawColorSwatch(message.data.colorCounts);
         worker.removeEventListener("message", handleWorkerCompletion);
-        
+                
         // hide wait indicator
         const waitIndicator = document.getElementById("wait-indicator");
         waitIndicator.classList.add("invisible");
@@ -16,6 +16,9 @@ handleWorkerCompletion = (message) => {
         // scroll to color swatch section
         const pixelCountContainer = document.getElementById('pixel-count-container'); 
         pixelCountContainer.scrollIntoView({ behavior: 'smooth'});
+
+        const colorCountLabel = document.getElementById('color-count');
+        colorCountLabel.innerText = Object.keys(message.data.colorCounts).length;
     }
 };
 
@@ -54,9 +57,10 @@ loadImage = (file) => {
         worker.postMessage({
             "imageData": imageData.data
         });
-
+        
         const waitIndicator = document.getElementById("wait-indicator");
         waitIndicator.classList.remove("invisible");
+        
     }  
 };
 

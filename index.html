@@ -19,7 +19,7 @@
             <!-- About Section -->
             <section id="about">
                 <h2>Count Pixels by Color</h2>
-                <p>Pixel Color Counter is vanilla JS web application that accepts an image file (uploaded by the user) and displays the total number of pixels per a unique color. </p>
+                <p>Pixel Color Counter is vanilla JS web application that accepts an image file (selected by the user) and displays the total number of pixels per a unique color. </p>
             </section> 
             <!-- Upload Image Section -->
             <section id="upload-container">
@@ -32,8 +32,10 @@
             </section>
             <!-- Pixel Color Swatches and Count -->
             <section id="pixel-count-container" class="pixel-count-container invisible">
-                <h2>Pixel Counts by Color</h2>
-                <div id="color-swatches" class="color-swatches"></div>
+                <h2>Pixel Counts by Color</h2>                
+                <p><span id="color-count"></span> unique colors</p>
+                <div id="color-swatches" class="color-swatches">
+                </div>
             </section> 
         </main>        
         <div id="wait-indicator" class="invisible">
