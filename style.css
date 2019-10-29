@@ -64,6 +64,21 @@ canvas {
     visibility: hidden;
 }
 
+.fadein {
+    animation-name: fadein;
+    animation-duration: 250ms;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 #about,
 #upload-container,
 .pixel-count-container {

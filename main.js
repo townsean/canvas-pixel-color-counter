@@ -12,6 +12,7 @@ handleWorkerCompletion = (message) => {
         // hide wait indicator
         const waitIndicator = document.getElementById("wait-indicator");
         waitIndicator.classList.add("invisible");
+        waitIndicator.classList.remove("fadein");
 
         // scroll to color swatch section
         const pixelCountContainer = document.getElementById('pixel-count-container'); 
@@ -60,7 +61,7 @@ loadImage = (file) => {
         
         const waitIndicator = document.getElementById("wait-indicator");
         waitIndicator.classList.remove("invisible");
-        
+        waitIndicator.classList.add("fadein");
     }  
 };
 
