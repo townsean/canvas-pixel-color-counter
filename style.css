@@ -91,7 +91,6 @@ canvas {
     display: flex;
     flex-wrap: wrap;
     margin-left: 5vw;
-    margin-bottom: 1rem;
 }
 
 .color-swatch-container {
