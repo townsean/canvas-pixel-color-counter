@@ -31,7 +31,7 @@ h2 {
 }
 
 header {
-    background: linear-gradient(black, rgb(46, 46, 46));    
+    background: linear-gradient(black, rgb(27, 27, 27));    
 }
 
 footer a,
@@ -49,7 +49,7 @@ footer {
     align-items: center;
     justify-content: center;
     height: 5vh;
-    background: linear-gradient(rgb(46, 46, 46), black);
+    background: linear-gradient(rgb(27, 27, 27), black);
 }
 
 a {
@@ -91,6 +91,7 @@ canvas {
     display: flex;
     flex-wrap: wrap;
     margin-left: 5vw;
+    margin-bottom: 1rem;
 }
 
 .color-swatch-container {
