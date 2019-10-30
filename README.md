@@ -13,8 +13,8 @@ Since this is a rather simple web app that [mostly utilizies the HTML5 canvas](h
 
 ## Built With
 
-* [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P)
-* [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+* [Press Start 2P Google Font](https://fonts.google.com/specimen/Press+Start+2P)
+* [Open Sans Google Font](https://fonts.google.com/specimen/Open+Sans)
 
 ## Useful Resources
 * [Using files from web applications](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)
