@@ -9,7 +9,7 @@ Canvas Pixel Color Counter is a vanilla JS web application that accepts an image
 ## Motivation
 I love making [geeky 8-bit art](https://www.ashleygrenon.com/tag/8-bit/) (mostly from wood). Part of the tedius process is counting the number of pixels per color. I wanted to automate the process, so I created [a Python script](https://www.thecodingcouple.com/counting-pixels-by-color-in-python-with-pillow-a-pil-fork/) do the job. You can [view the source for it here](https://github.com/townsean/pixel-color-count).
 
-![Work in progress shot of a project made with help from the app](assets/8-bit-boo-pixel-art-inprogress.jpg "A work in progress shot of a project made with help from the app")
+![Work in progress shot of a project made with help from the app](assets/8-bit-boo-pixel-art-inprogress.JPG "A work in progress shot of a project made with help from the app")
 
 The script works great for my use case, but I wanted to make it more accessible for others out there that may have a similar need. To do that I needed to move away from an application that ran on the command line to something that ran in the browser with a nice user interface.
 
