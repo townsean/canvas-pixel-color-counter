@@ -9,8 +9,6 @@ Canvas Pixel Color Counter is a vanilla JS web application that accepts an image
 ## Motivation
 I love making [geeky 8-bit art](https://www.ashleygrenon.com/tag/8-bit/) (mostly from wood). Part of the tedius process is counting the number of pixels per color. I wanted to automate the process, so I created [a Python script](https://www.thecodingcouple.com/counting-pixels-by-color-in-python-with-pillow-a-pil-fork/) do the job. You can [view the source for it here](https://github.com/townsean/pixel-color-count).
 
-![Work in progress shot of a project made with help from the app](assets/8-bit-boo-pixel-art-inprogress.JPG "A work in progress shot of a project made with help from the app")
-
 The script works great for my use case, but I wanted to make it more accessible for others out there that may have a similar need. To do that I needed to move away from an application that ran on the command line to something that ran in the browser with a nice user interface.
 
 Since this is a rather simple web app that [mostly utilizies the HTML5 canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas), I decided to write it using vanilla JS and CSS.
@@ -38,3 +36,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+![Work in progress shot of a project made with help from the app](assets/8-bit-boo-pixel-art-inprogress.JPG "A work in progress shot of a project made with help from the app")
